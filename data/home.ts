@@ -34,7 +34,7 @@ export const homeQuickAccess: QuickAccessItem[] = [
   {
     title: 'BMI Calculator',
     description: 'Check your body mass index',
-    href: '/(tabs)/tools',
+    href: '/(tabs)/tools/bmi',
     icon: 'barbell',
     tintBackgroundClassName: 'bg-aqua/16',
     tintColor: '#47C2C0',
