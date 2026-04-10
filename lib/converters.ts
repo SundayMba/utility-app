@@ -73,6 +73,8 @@ export const mockCurrencyRates: Record<CurrencyCode, number> = {
   JPY: 157.2,
 };
 
+export const mockCurrencyLastUpdated = 'Apr 10, 2026, 11:30 AM WAT';
+
 export function convertLength(value: number, from: LengthUnit, to: LengthUnit) {
   return (value * lengthFactors[from]) / lengthFactors[to];
 }
