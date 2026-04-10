@@ -117,7 +117,7 @@ export function UnitConversionScreen({
         <SectionHeader eyebrow="Quick conversions" title="Useful references" />
         <View className="flex-row flex-wrap justify-between gap-y-4">
           {quickConversions.map((item) => (
-            <AppCard key={item.label} className="w-[48.5%] px-4 py-4">
+            <AppCard key={`${item.label}-${item.value}`} className="w-[48.5%] px-4 py-4">
               <Text className="font-heading text-base text-ink">{item.label}</Text>
               <Text className="mt-3 font-display text-[22px] text-ink">{item.value}</Text>
               <Text className="mt-2 font-light text-sm leading-5 text-muted">{item.sublabel}</Text>
