@@ -13,6 +13,11 @@ import 'react-native-reanimated';
 import '@/global.css';
 import { navTheme } from '@/lib/theme';
 
+SplashScreen.setOptions({
+  duration: 500,
+  fade: true,
+});
+
 SplashScreen.preventAutoHideAsync().catch(() => {
   // Ignore duplicate calls during fast refresh.
 });
@@ -20,7 +25,7 @@ SplashScreen.preventAutoHideAsync().catch(() => {
 export { ErrorBoundary } from 'expo-router';
 
 export const unstable_settings = {
-  initialRouteName: 'index',
+  initialRouteName: '(tabs)',
 };
 
 export default function RootLayout() {
