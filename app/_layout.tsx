@@ -55,7 +55,6 @@ export default function RootLayout() {
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: '#F4F7FB' } }}>
         <Stack.Screen name="index" />
         <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="settings" options={{ presentation: 'card', animation: 'slide_from_right' }} />
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>
