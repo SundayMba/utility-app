@@ -18,11 +18,11 @@ export default function HomeScreen() {
       <Animated.View entering={FadeInDown.duration(420)}>
         <AppHeader
           title="Home"
-          subtitle="Smart Utility Toolkit. Your everyday tools in one calm mobile workspace."
+          subtitle="Smart Utility Toolkit. Your everyday tools in one clean mobile workspace."
           rightSlot={
             <>
-              <HeaderIconButton icon="document-text-outline" onPress={() => router.push('/(tabs)/notes')} />
-              <HeaderIconButton icon="construct-outline" onPress={() => router.push('/(tabs)/tools')} />
+              <HeaderIconButton icon="time-outline" onPress={() => router.push('/(tabs)/notes')} />
+              <HeaderIconButton icon="refresh-outline" onPress={() => router.push('/(tabs)/converter')} />
               <HeaderIconButton icon="settings-outline" onPress={() => router.push('/settings')} />
             </>
           }

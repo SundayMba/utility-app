@@ -51,7 +51,7 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={navTheme as Theme}>
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: '#F4F7FB' } }}>
         <Stack.Screen name="index" />
         <Stack.Screen name="(tabs)" />
