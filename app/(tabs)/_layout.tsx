@@ -2,6 +2,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { palette } from '@/lib/theme';
+
 export default function TabsLayout() {
   const insets = useSafeAreaInsets();
 
@@ -9,10 +11,10 @@ export default function TabsLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        sceneStyle: { backgroundColor: '#F4F7FB' },
+        sceneStyle: { backgroundColor: palette.canvas },
         tabBarHideOnKeyboard: true,
-        tabBarActiveTintColor: '#B3A7FF',
-        tabBarInactiveTintColor: '#8E87A6',
+        tabBarActiveTintColor: palette.shellAccent,
+        tabBarInactiveTintColor: palette.shellMuted,
         tabBarLabelStyle: {
           fontFamily: 'Manrope_600SemiBold',
           fontSize: 11,
@@ -22,9 +24,9 @@ export default function TabsLayout() {
           paddingTop: 6,
         },
         tabBarStyle: {
-          backgroundColor: '#100E14',
+          backgroundColor: palette.shell,
           borderTopWidth: 1,
-          borderTopColor: '#2A2633',
+          borderTopColor: palette.shellBorder,
           bottom: 0,
           height: 58 + Math.max(insets.bottom, 10),
           left: 0,
