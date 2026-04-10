@@ -37,3 +37,6 @@ export const surfaceShadow = {
   shadowRadius: 22,
   elevation: 6,
 };
+
+export const tabBarBaseHeight = 58;
+export const tabBarInsetMin = 10;
