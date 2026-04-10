@@ -43,6 +43,13 @@
     "experiments": {
       "typedRoutes": true
     },
-    "description": "A polished mobile toolkit for conversion, notes, and everyday calculators."
+    "description": "A polished mobile toolkit for conversion, notes, and everyday calculators.",
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "43f72d6b-893b-4570-bfd4-d7f936bae134"
+      }
+    },
+    "owner": "mba001"
   }
 }
