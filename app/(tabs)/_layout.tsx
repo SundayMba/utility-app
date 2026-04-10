@@ -1,32 +1,44 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
-
-import { surfaceShadow } from '@/lib/theme';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function TabsLayout() {
+  const insets = useSafeAreaInsets();
+
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
         sceneStyle: { backgroundColor: '#F4F7FB' },
-        tabBarActiveTintColor: '#4F7BF7',
-        tabBarInactiveTintColor: '#7C8AA5',
+        tabBarHideOnKeyboard: true,
+        tabBarActiveTintColor: '#B3A7FF',
+        tabBarInactiveTintColor: '#8E87A6',
         tabBarLabelStyle: {
           fontFamily: 'Manrope_600SemiBold',
-          fontSize: 12,
-          marginBottom: 2,
+          fontSize: 11,
+          marginTop: 2,
+        },
+        tabBarItemStyle: {
+          paddingTop: 6,
         },
         tabBarStyle: {
-          backgroundColor: '#FFFFFF',
+          backgroundColor: '#15131C',
           borderTopWidth: 0,
-          bottom: 16,
-          height: 74,
-          left: 16,
+          bottom: Math.max(insets.bottom, 10) + 10,
+          height: 68,
+          left: 18,
           position: 'absolute',
-          right: 16,
-          borderRadius: 28,
-          paddingTop: 10,
-          ...surfaceShadow,
+          right: 18,
+          borderRadius: 26,
+          paddingBottom: 8,
+          paddingTop: 6,
+          borderWidth: 1,
+          borderColor: '#272330',
+          shadowColor: '#000000',
+          shadowOffset: { width: 0, height: 16 },
+          shadowOpacity: 0.26,
+          shadowRadius: 24,
+          elevation: 16,
         },
       }}
     >

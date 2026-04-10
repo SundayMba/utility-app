@@ -1,11 +1,10 @@
-import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { Text, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 
-import { PressableScale } from '@/components/motion/PressableScale';
 import { AppCard } from '@/components/ui/AppCard';
 import { AppHeader } from '@/components/ui/AppHeader';
+import { HeaderIconButton } from '@/components/ui/HeaderIconButton';
 import { AppScreen } from '@/components/ui/AppScreen';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { ToolCard } from '@/components/ui/ToolCard';
@@ -18,15 +17,14 @@ export default function HomeScreen() {
     <AppScreen contentClassName="pb-32">
       <Animated.View entering={FadeInDown.duration(420)}>
         <AppHeader
-          title="Smart Utility Toolkit"
-          subtitle="Your everyday tools in one calm mobile workspace."
+          title="Home"
+          subtitle="Smart Utility Toolkit. Your everyday tools in one calm mobile workspace."
           rightSlot={
-            <PressableScale
-              onPress={() => router.push('/settings')}
-              className="mt-1 h-11 w-11 items-center justify-center rounded-2xl bg-white"
-            >
-              <Ionicons name="settings-outline" size={20} color="#183B6B" />
-            </PressableScale>
+            <>
+              <HeaderIconButton icon="document-text-outline" onPress={() => router.push('/(tabs)/notes')} />
+              <HeaderIconButton icon="construct-outline" onPress={() => router.push('/(tabs)/tools')} />
+              <HeaderIconButton icon="settings-outline" onPress={() => router.push('/settings')} />
+            </>
           }
         />
       </Animated.View>
