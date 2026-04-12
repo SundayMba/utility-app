@@ -3,10 +3,11 @@ import { Tabs } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { palette, tabBarBaseHeight, tabBarInsetMin } from '@/lib/theme';
+import { Platform } from 'react-native';
 
 export default function TabsLayout() {
   const insets = useSafeAreaInsets();
-
+  const extraLift = Platform.OS === 'android' ? 15 : 0;
   return (
     <Tabs
       screenOptions={{
@@ -27,15 +28,18 @@ export default function TabsLayout() {
           backgroundColor: palette.shell,
           borderTopWidth: 1,
           borderTopColor: palette.shellBorder,
-          bottom: 0,
-          height: tabBarBaseHeight + Math.max(insets.bottom, tabBarInsetMin),
+          bottom: extraLift,
+          height:
+            tabBarBaseHeight +
+            Math.max(insets.bottom, tabBarInsetMin) +
+            extraLift,
           left: 0,
           position: 'absolute',
           right: 0,
           borderRadius: 0,
           paddingBottom: Math.max(insets.bottom, tabBarInsetMin),
           paddingTop: 7,
-          elevation: 0,
+          elevation: 12,
           shadowOpacity: 0,
         },
       }}
@@ -45,7 +49,11 @@ export default function TabsLayout() {
         options={{
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'home' : 'home-outline'} size={22} color={color} />
+            <Ionicons
+              name={focused ? 'home' : 'home-outline'}
+              size={22}
+              color={color}
+            />
           ),
         }}
       />
@@ -54,7 +62,11 @@ export default function TabsLayout() {
         options={{
           title: 'Converter',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'swap-horizontal' : 'swap-horizontal-outline'} size={22} color={color} />
+            <Ionicons
+              name={focused ? 'swap-horizontal' : 'swap-horizontal-outline'}
+              size={22}
+              color={color}
+            />
           ),
         }}
       />
@@ -63,7 +75,11 @@ export default function TabsLayout() {
         options={{
           title: 'Notes',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'document-text' : 'document-text-outline'} size={22} color={color} />
+            <Ionicons
+              name={focused ? 'document-text' : 'document-text-outline'}
+              size={22}
+              color={color}
+            />
           ),
         }}
       />
@@ -72,7 +88,11 @@ export default function TabsLayout() {
         options={{
           title: 'Tools',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'construct' : 'construct-outline'} size={22} color={color} />
+            <Ionicons
+              name={focused ? 'construct' : 'construct-outline'}
+              size={22}
+              color={color}
+            />
           ),
         }}
       />
