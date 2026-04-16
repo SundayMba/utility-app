@@ -22,7 +22,7 @@ export default function TabsLayout() {
           marginTop: 2,
         },
         tabBarItemStyle: {
-          paddingTop: 6,
+          // paddingTop: 6,
         },
         tabBarStyle: {
           backgroundColor: palette.shell,
@@ -64,6 +64,19 @@ export default function TabsLayout() {
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? 'swap-horizontal' : 'swap-horizontal-outline'}
+              size={22}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="tasks"
+        options={{
+          title: 'Tasks',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? 'checkbox' : 'checkbox-outline'}
               size={22}
               color={color}
             />

@@ -7,6 +7,7 @@ Smart Utility Toolkit is a mobile-first utility app built with **React Native**,
 The app is designed as a compact toolkit for everyday use. It includes:
 
 - a multi-category **Unit Converter**
+- a locally persistent **Checklist / Task Manager**
 - a locally persistent **Notes** feature
 - a **Tools Hub** with multiple calculators
 - a clean **Home Dashboard**
@@ -21,6 +22,16 @@ The app is designed as a compact toolkit for everyday use. It includes:
 - Quick access cards for core modules
 - Clean dashboard layout
 - Strong visual grouping and modern spacing
+
+### Checklist
+
+- Create task items
+- Mark tasks as completed or reopen them
+- Edit task title and details
+- Delete saved tasks
+- Search tasks quickly
+- AsyncStorage persistence for offline access
+- Pending and completed summary cards
 
 ### Converter
 
@@ -87,7 +98,6 @@ The design system focuses on:
 app/
   _layout.tsx
   index.tsx
-  +not-found.tsx
   (tabs)/
     _layout.tsx
     home/
@@ -99,6 +109,11 @@ app/
       weight.tsx
       temperature.tsx
       currency.tsx
+    tasks/
+      _layout.tsx
+      index.tsx
+      new.tsx
+      [id].tsx
     notes/
       index.tsx
       new.tsx
@@ -113,19 +128,54 @@ app/
     settings.tsx
 
 components/
+  tasks/
   ui/
   notes/
 
 features/
   converter/
+  tasks/
   notes/
 
 lib/
   calculators.ts
   converters.ts
   notes.ts
+  tasks.ts
   theme.ts
+
+types/
+  note.ts
+  task.ts
 
 assets/
   images/
 ```
+
+## Running The App
+
+```bash
+npm install
+npm run start
+```
+
+Then open the Expo project in:
+
+- Android emulator
+- iOS simulator
+- Expo Go
+
+## Persistence
+
+Both the Notes and Checklist modules use `@react-native-async-storage/async-storage`, so saved entries remain available offline on the device until the app data is cleared.
+
+## Submission Notes
+
+To complete final submission outside this repository update, you still need to:
+
+- build an Android APK or iOS IPA with your own Expo/EAS credentials
+- upload that artifact to Appetize
+- add the public preview link to your submission materials
+- publish the required LinkedIn documentation post
+
+A draft post is included at `docs/linkedin-post.md`.

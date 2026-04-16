@@ -3,7 +3,7 @@ import { Href } from 'expo-router';
 type QuickAccessItem = {
   description: string;
   href: Href;
-  icon: 'swap-horizontal' | 'document-text' | 'barbell' | 'construct';
+  icon: 'swap-horizontal' | 'document-text' | 'barbell' | 'construct' | 'checkbox';
   title: string;
   tintBackgroundClassName: string;
   tintColor: string;
@@ -24,10 +24,10 @@ export const homeQuickAccess: QuickAccessItem[] = [
     tintColor: '#4F7BF7',
   },
   {
-    title: 'Notes',
-    description: 'Write and manage quick notes',
-    href: '/(tabs)/notes',
-    icon: 'document-text',
+    title: 'Checklist',
+    description: 'Create, complete, edit, and delete tasks',
+    href: '/tasks' as Href,
+    icon: 'checkbox',
     tintBackgroundClassName: 'bg-warm/18',
     tintColor: '#F5B64D',
   },
@@ -51,7 +51,7 @@ export const homeQuickAccess: QuickAccessItem[] = [
 
 export const homeOverview: OverviewItem[] = [
   { title: '4', label: 'Converter Types' },
-  { title: 'Notes', label: 'Quick Capture' },
+  { title: 'Tasks', label: 'Offline Checklist' },
   { title: 'BMI', label: 'Health Tool' },
   { title: 'Fast', label: 'Simple UX' },
 ];

@@ -1,4 +1,4 @@
-import { useRouter } from 'expo-router';
+import { Href, useRouter } from 'expo-router';
 import { Text, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 
@@ -21,8 +21,8 @@ export default function HomeScreen() {
           subtitle="Smart Utility Toolkit. Your everyday tools in one clean mobile workspace."
           rightSlot={
             <>
-              <HeaderIconButton icon="time-outline" onPress={() => router.push('/(tabs)/notes')} />
-              <HeaderIconButton icon="refresh-outline" onPress={() => router.push('/(tabs)/converter')} />
+              <HeaderIconButton icon="checkbox-outline" onPress={() => router.push('/tasks' as Href)} />
+              <HeaderIconButton icon="document-text-outline" onPress={() => router.push('/(tabs)/notes')} />
               <HeaderIconButton icon="settings-outline" onPress={() => router.push('/settings')} />
             </>
           }
